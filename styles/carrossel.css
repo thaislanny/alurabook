@@ -1,0 +1,135 @@
+.carrossel__titulo {
+    font-weight: 700;
+    text-transform: uppercase;
+    font-size: 18px;
+    color: var(--laranja);
+    background-color: var(--branco);
+    padding: 1em 0 0.5em 0;
+    text-align: center;
+}
+
+.swiper-slide img {
+    width: 100%; /* para mostrar 100% das imagens dos livros*/
+}
+
+.swiper-button-prev, 
+.swiper-button-next { /* setinhas que ficam aparecendo em cima da img dos livros*/
+    display: none; /* tirando elas*/
+}
+
+.swiper-pagination { /* posição das bolinhas*/
+    position: initial; /* colocando as bolinhas em cima*/
+    margin: 0.5em 0; 
+}
+
+.card__descrição {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 0.5em;
+}
+
+.card__botões {
+    display: flex; /* colocando os itens um do lado do ourto*/
+    justify-content: space-between;
+}
+
+.botões {
+    display: flex; /* colocando os itens um do lado do ourto, pq a lista faz um cada ícone ficar embaixo do outro*/
+}
+
+.card {
+background: var(--branco);
+box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+border-radius: 10px;
+margin: 1em;
+padding: 1em;
+}
+
+.descrição__titulo {
+    font-weight: 700;
+    color: var(--laranja);
+}
+
+.descrição__titulo-livro {
+    font-weight: 700;
+    font-size: 18px;
+    color: var(--azul-escuro);
+    margin: 0.5em 0;
+}
+
+.descrição__texto {
+    font-size: 14px;
+    color: rgba(0, 0, 0, 0.85);
+}
+
+.botões__item {
+    margin: 0 0.5em;
+}
+
+.botão__ancora {
+    background-color: var(--laranja);
+    padding: 1em 2.2em;
+    color: var(--branco);
+    font-weight: 700;
+    text-decoration: none;
+    margin-top: 1.5em;
+    
+}
+
+@media screen and (min-width: 1024px) {
+
+.carrossel__titulo {
+font-size: 26px;
+}
+
+.swiper-pagination { /* espaçamento das bolinhas vertical*/
+    margin:2em 0 3em 0 ;
+}
+
+.swiper {/* diminuindo o carrossel*/
+width: 60%;
+}
+
+.swiper-button-prev, 
+.swiper-button-next { /* aparecendo com os botões de antes e depois*/
+    display: block;
+    top: 60%; /* posicionando os botões de antes e depois no meio*/
+}
+
+.card {
+    width: 40%;
+    margin: 2em auto; /* posicionando o card no botão*/   
+}
+
+}
+
+@media screen and (min-width: 1728px) {
+
+
+    /* não estou conseguindo deixar o card posicionado */ 
+    .carrossel_card {
+        display: flex;
+        margin: 0 20vw 3em 20vw;
+        align-items: center;
+        padding: 2em;
+        
+    }
+
+   .card{
+    width: 65%;
+    margin: 3em 0 0 4em;
+   }
+
+   .descrição {
+    margin-right: 1em;
+   }
+
+   .descrição__titulo{
+    font-size: 32px;
+   }
+
+   .descrição__texto{
+    font-size: 14px;
+   }
+
+}

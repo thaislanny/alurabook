@@ -1,0 +1,184 @@
+.cabeçalho__menu-hamburguer {
+    width: 24px;
+    height: 24px;
+    background-image: url("../img/Menu.svg");
+    background-repeat: no-repeat;
+    background-position: center;
+    display: inline-block;
+}
+
+.container__botao:checked ~ .container__rotulo > .cabeçalho__menu-hamburguer {
+
+    background-image: url("../img/menu_black_24dp1.svg");
+    
+}
+
+.container__botao:checked ~ .container__rotulo {
+    background: var(--azul);
+}
+
+.cabeçalho {
+    background-color: var(--branco);
+    display: flex; /* Colocando as classes "container" uma do lado da outra */
+    justify-content: space-between; /* foi cada um para um canto */
+    align-items: center; /* alinhar na mesma linha e no centro da caixa */
+    position: relative;
+}
+
+.container {
+    display: flex;
+    align-items: center;
+}
+
+.container__imagem {
+    padding: 1em;
+}
+
+.lista-menu {
+    display: none;
+    position: absolute;
+    top: 100%; /* colocando toda lista do menu abaixo do cabeçalho */
+    width: 60vw; /* aumentando a caixinha do menu, até o coraçãozinho */
+}
+
+.container__botao:checked~.lista-menu { /* quando clico e abre as opções, se clicar novamente, some  checked: pseudoclasse */
+   display: block; 
+}
+
+.lista-menu__titulo, 
+.lista-menu__item {
+    padding: 1em;
+    background-color: var(--branco);
+}
+
+.lista-menu__titulo {
+    color: var(--laranja);
+    font-weight: 700;
+    
+}
+
+.lista-menu__link {
+    background: var(--azul);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    text-transform: uppercase; /*deixando tudo maiusculo */
+    font-family: var(--fonte-poppins);
+    
+}
+
+.container__botao {
+    display: none; /*tirar o botãozinho da estilização */
+}
+
+.container__titulo {
+    display: none; /*tirar o media querie da tela menor que 1024  */
+}
+
+.opções {
+    display: none; /*tirar o media querie da tela menor que 1024  */
+}
+
+.container__texto {
+    display: none;
+}
+
+@media screen and (min-width: 1024px) {/*para tamanho tablet, quando usar do tamanho menor p/ maior, usado o min width, se for do tamanho maior para menor, max-width */
+
+.container__titulo, 
+.container__titulo--negrito {
+    font-family: var(--fonte-josefin);
+    font-size: 30px;
+}
+
+.container__titulo {
+    font-weight: 400;
+    display: block;  /*tquando for mais vai aparecer o texto  */
+}
+
+.container__titulo--negrito {
+    font-weight: 700;
+}
+
+.opções {
+    display: flex;
+}
+
+.opções__item {
+    padding: 2em 1em;
+    text-transform: uppercase;
+    color: var(--preto);
+}
+
+.opções__link {
+    color: var(--preto); 
+    text-decoration: none;
+}
+
+.container__imagem-transparente {
+    display: none;
+}
+
+.cabeçalho__menu-hamburguer { 
+    background-image: none;
+}
+
+.opções__botão:checked~.lista-menu { /* adicionando a lista do "categorias"  */
+    display: block;
+    width: auto; /* dimunuindo a largura da lista"  */
+}
+
+.opções__botão { /*tirar o botãozinho da estilização */
+    display: none;
+}
+
+.opções__botão:checked ~ .opções__rotulo > .opções__item { /*arrumando as cores do btão qdo aperta/ estudar sobre pseudoclasses */
+    background: var(--azul);
+    color: var(--branco);
+}
+
+.lista-menu__item:hover {
+    background: var(--azul);
+}
+
+.lista-menu__item:hover > .lista-menu__link {  
+    -webkit-text-fill-color: var(--branco); /*estamos definindo aqui, pq estamos utilizando o fundo com azul degradeÊ e quando usamos ele, está definido como transparente lá em cima */
+    text-decoration: none;
+}
+
+.container__botao:checked~.lista-menu {
+    display: none;
+}
+
+.container__botao:checked ~ .container__rotulo > .cabeçalho__menu-hamburguer {
+    background-image: none;
+}
+
+.container__botao:checked ~ .container__rotulo {
+    background: none;
+}
+
+}
+
+@media screen and (min-width: 1728px) {
+
+.container__link {
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+    color: var(--preto);
+}
+
+.cabeçalho {
+    padding: 0 2em;
+}
+
+.opções {
+    margin-right: auto; /*puxando "categorias, favoritos e minha estante" para o lado */
+}
+
+.container__texto {
+    display: block;
+}
+
+}
